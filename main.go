@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"technopartner/db"
+)
 
 func main() {
-	fmt.Print("Initial Commit")
+	db.Init()
 }

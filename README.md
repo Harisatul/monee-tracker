@@ -11,9 +11,8 @@ Basic coding, REST API test using Golang make a design system.
 
 
 ## DB Design
-
-
-![alt text](https://drive.google.com/file/d/1bB8UgFiCtVVDKFzWuuJ1j42oUHKZrNF8/view?usp=sharing)
+see this link :
+(https://drive.google.com/file/d/1bB8UgFiCtVVDKFzWuuJ1j42oUHKZrNF8/view?usp=sharing)
 
 
 1. Clone this project

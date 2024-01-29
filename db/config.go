@@ -6,6 +6,7 @@ import (
 	"gorm.io/gorm"
 	"technopartner/config"
 	"technopartner/db/seed"
+	"technopartner/internal/entity"
 )
 
 var DB *gorm.DB
@@ -35,9 +36,10 @@ func InitDB() {
 }
 
 func InitialMigration() {
-	DB.Migrator().DropTable()
-	DB.AutoMigrate()
-	//DB.Migrator().HasConstraint(&ue.User{}, "UserDetail")
+	//&entity.Role{}
+	DB.Migrator().DropTable(&entity.User{})
+	DB.AutoMigrate(entity.User{}, entity.Role{})
+	DB.Migrator().HasConstraint(&entity.User{}, "role")
 	//DB.Migrator().HasConstraint(&re.Role{}, "Users")
 	//DB.Migrator().HasConstraint(&pe.Product{}, "TransactionDetail")
 }

@@ -4,14 +4,14 @@ import (
 	"github.com/labstack/echo/v4"
 	"net/http"
 	"technopartner/internal/entity"
-	"technopartner/internal/service"
+	"technopartner/internal/service/user"
 )
 
 type AuthHandler struct {
-	authService service.AuthService
+	authService user.AuthService
 }
 
-func New(authService service.AuthService) *AuthHandler {
+func New(authService user.AuthService) *AuthHandler {
 	return &AuthHandler{
 		authService,
 	}
@@ -61,13 +61,6 @@ func (ah *AuthHandler) LoginUser() echo.HandlerFunc {
 				"Status":  http.StatusBadRequest,
 			})
 		}
-
-		//if role != "b29112fc-c7b5-4386-a31e-f2c040de7fcb" {
-		//	return c.JSON(http.StatusUnauthorized, echo.Map{
-		//		"Message": "Email atau password salah",
-		//		"Status":  http.StatusUnauthorized,
-		//	})
-		//}
 
 		return c.JSON(http.StatusOK, map[string]interface{}{
 			"Message": "Berhasil login",

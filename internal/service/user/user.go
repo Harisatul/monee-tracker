@@ -1,9 +1,9 @@
-package service
+package user
 
 import (
 	"errors"
 	"technopartner/internal/entity"
-	"technopartner/internal/repository"
+	"technopartner/internal/repository/user"
 	"technopartner/pkg/hash"
 	"technopartner/pkg/validator"
 )
@@ -14,10 +14,10 @@ type AuthService interface {
 }
 
 type authService struct {
-	authRepo repository.AuthRepo
+	authRepo user.AuthRepo
 }
 
-func New(adminRepo repository.AuthRepo) *authService {
+func New(adminRepo user.AuthRepo) *authService {
 	return &authService{
 		adminRepo,
 	}

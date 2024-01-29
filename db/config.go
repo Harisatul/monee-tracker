@@ -38,7 +38,7 @@ func InitDB() {
 func InitialMigration() {
 	//&entity.Role{}
 	DB.Migrator().DropTable(&entity.User{})
-	DB.AutoMigrate(entity.User{}, entity.Role{})
+	DB.AutoMigrate(entity.User{}, entity.Role{}, entity.Category{})
 	DB.Migrator().HasConstraint(&entity.User{}, "role")
 	//DB.Migrator().HasConstraint(&re.Role{}, "Users")
 	//DB.Migrator().HasConstraint(&pe.Product{}, "TransactionDetail")
